@@ -1,0 +1,12 @@
+{
+  "plugins": ["effector"],
+  "extends": [
+    "@eslint-kit/patch",
+    "@eslint-kit/base",
+    "@eslint-kit/typescript",
+    "@eslint-kit/node",
+    "@eslint-kit/react",
+    "plugin:effector/recommended"
+  ],
+  "parser": "@typescript-eslint/parser"
+}

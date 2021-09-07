@@ -1,10 +1,12 @@
 {
   "name": "aviasales",
   "version": "0.0.0",
+  "homepage": "https://github.com/lordSzn/aviasales",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "format": "prettier --write \"./src/**/**.{ts,tsx,js,jsx,json}\""
   },
   "dependencies": {
     "effector": "^22.1.0",

@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
 
     --shadow-small: 0px 2px 8px rgba(0, 0, 0, 0.1);
 
-    --background: var(---gray);
+    --background: var(--beige);
   }
 
   html,
@@ -30,5 +30,9 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  #root{
+    background: var(--background);
   }
 `;

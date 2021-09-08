@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
+import { FilterMenu } from '../features/filter';
+import { Header } from '../features/header/organisms/header';
 
 interface Props {
   header?: ReactNode;
@@ -7,7 +9,11 @@ interface Props {
   children: ReactNode;
 }
 
-export const BaseTemplate = ({ header, filter, children }: Props) => {
+export const BaseTemplate = ({
+  header = <Header />,
+  filter = <FilterMenu />,
+  children,
+}: Props) => {
   return (
     <Container>
       <HeaderArea>{header}</HeaderArea>
@@ -21,7 +27,7 @@ const Container = styled.section`
   display: grid;
   height: 100%;
   overflow: hidden;
-  max-width: 75rem;
+  max-width: 97rem;
   margin: 0 auto;
 
   grid-template-columns: minmax(auto, 35rem) 1fr;

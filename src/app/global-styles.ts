@@ -31,7 +31,9 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
+  li{
+     list-style: none;
+  }
   #root{
     background: var(--background);
   }

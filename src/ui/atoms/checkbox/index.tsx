@@ -21,6 +21,7 @@ export const CheckBox = styled(CheckboxBase)`
   align-items: center;
 
   & > label {
+    cursor: pointer;
     font-size: var(--size-small);
   }
 

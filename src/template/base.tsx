@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { FilterMenu } from '../features/filter';
 import { Header } from '../features/header/organisms/header';
 
-
 interface Props {
   header?: ReactNode;
   filter?: ReactNode;
@@ -29,7 +28,7 @@ const Container = styled.section`
   height: 100%;
   overflow: hidden;
   max-width: 97rem;
-
+  margin: 0 auto;
 
   grid-template-columns: minmax(auto, 35rem) 1fr;
   grid-template-rows: minmax(auto, 16rem) 1fr;

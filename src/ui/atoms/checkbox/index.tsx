@@ -1,16 +1,17 @@
-import React, { HTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-interface Props extends HTMLAttributes<HTMLInputElement> {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   className?: string;
+  text: string;
 }
 
-const CheckboxBase = ({ name, className, ...attrs }: Props) => {
+const CheckboxBase = ({ text, name, className, ...attrs }: Props) => {
   return (
     <div className={className}>
-      <label htmlFor={name}/>
       <input type="checkbox" id={name} {...attrs} />
+      <label htmlFor={name}>{text}</label>
     </div>
   );
 };
@@ -18,6 +19,10 @@ const CheckboxBase = ({ name, className, ...attrs }: Props) => {
 export const CheckBox = styled(CheckboxBase)`
   display: flex;
   align-items: center;
+
+  & > label {
+    font-size: var(--size-small);
+  }
 
   & input {
     width: 2rem;

@@ -11,7 +11,8 @@ export const GlobalStyles = createGlobalStyle`
     --size-small: 1.2rem;
     --size-medium: 1.4rem;
     --size-large: 2rem;
-
+    --size-extra: 2.4rem;
+    
     --shadow-small: 0px 2px 8px rgba(0, 0, 0, 0.1);
 
     --background: var(--beige);

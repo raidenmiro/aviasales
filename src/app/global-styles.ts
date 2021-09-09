@@ -14,7 +14,8 @@ export const GlobalStyles = createGlobalStyle`
     --size-extra: 2.4rem;
     
     --shadow-small: 0px 2px 8px rgba(0, 0, 0, 0.1);
-
+    --shadow-medium: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
     --background: var(--beige);
   }
 

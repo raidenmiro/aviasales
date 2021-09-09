@@ -26,14 +26,19 @@ const Container = styled.article`
 
   background: var(--white);
   box-shadow: var(--shadow-small);
+  border-radius: 5px;
+
+  padding: 2rem;
 `;
 
 const HeaderArea = styled.div`
   grid-area: header;
 `;
+
 const MiddleArea = styled.div`
   grid-area: there;
 `;
+
 const BottomArea = styled.div`
   grid-area: back;
 `;

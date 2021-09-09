@@ -6,14 +6,12 @@ interface Props {
   content: string;
 }
 
-export const Cell = ({ title, content }: Props) => {
-  return (
-    <Container>
-      <Typography>{title}</Typography>
-      <Content>{content}</Content>
-    </Container>
-  );
-};
+export const Cell = ({ title, content }: Props) => (
+  <Container>
+    <Typography>{title}</Typography>
+    <Content>{content}</Content>
+  </Container>
+);
 
 const Container = styled.div`
   font-weight: (--weight);

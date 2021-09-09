@@ -18,7 +18,7 @@ export const TicketPreview = () => {
 
 const Container = styled.article`
   display: grid;
-  grid-template-rows: minmax(auto, 8rem) repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
     'header'
     'there'
@@ -28,7 +28,16 @@ const Container = styled.article`
   box-shadow: var(--shadow-small);
   border-radius: 5px;
 
+  max-width: 50.2rem;
+  max-height: 18rem;
   padding: 2rem;
+
+  transition: box-shadow 0.3s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--shadow-medium);
+  }
 `;
 
 const HeaderArea = styled.div`

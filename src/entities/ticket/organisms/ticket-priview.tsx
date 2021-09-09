@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { DirectionRow } from '../molecules';
+import { HeaderTicket } from '../molecules/header-ticket';
 
 export const TicketPreview = () => {
   return (
     <Container>
-      <HeaderArea>header</HeaderArea>
+      <HeaderArea>
+        <HeaderTicket />
+      </HeaderArea>
       <MiddleArea>
         <DirectionRow />
       </MiddleArea>

@@ -20,13 +20,13 @@ const Container = styled.div`
 
 const Typography = styled.h4`
   color: var(--gray);
-  font-size: var(--size-small);
+  font-size: var(--size-medium);
 
   letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
 `;
 
 const Content = styled.div`
-  font-size: var(--size-medium);
+  font-size: var(--size-large);
   color: var(--black);
 `;

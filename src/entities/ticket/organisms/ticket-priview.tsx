@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import { DirectionRow } from '../molecules';
 
 export const TicketPreview = () => {
   return (
     <Container>
       <HeaderArea>header</HeaderArea>
-      <MiddleArea>there</MiddleArea>
-      <BottomArea>back</BottomArea>
+      <MiddleArea>
+        <DirectionRow />
+      </MiddleArea>
+      <BottomArea>
+        <DirectionRow />
+      </BottomArea>
     </Container>
   );
 };
 
 const Container = styled.article`
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: minmax(auto, 8.5rem) repeat(2, minmax(auto, 5rem));
+  grid-template-rows: minmax(auto, 8rem) repeat(2, auto);
   grid-template-areas:
     'header'
     'there'

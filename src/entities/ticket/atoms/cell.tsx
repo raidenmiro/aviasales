@@ -15,6 +15,7 @@ export const Cell = ({ title, content }: Props) => (
 
 const Container = styled.div`
   font-weight: (--weight);
+  margin-bottom: 1rem;
 `;
 
 const Typography = styled.h4`
@@ -22,7 +23,7 @@ const Typography = styled.h4`
   font-size: var(--size-small);
 
   letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Content = styled.div`

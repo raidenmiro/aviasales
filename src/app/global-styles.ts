@@ -2,11 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   :root{
-    --white: #FFFFFF;
-    --beige: #F3F7FA;
-    --blue: #2196F3;
-    --black: #4A4A4A;
-    --gray: #A0B0B9;
+    --white: hsl(0, 0%, 100%);
+    --beige: hsl(206, 41%, 97%);
+    --blue: hsl(207, 90%, 54%);
+    --black: hsl(0, 0%, 29%);
+    --gray: hsl(202, 15%, 68%);
 
     --size-small: 1.2rem;
     --size-medium: 1.4rem;

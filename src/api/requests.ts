@@ -12,12 +12,17 @@ export const loadSearchIdFx = createEffect<void, SearchType>({
   },
 });
 
-export const loadTicketsFx = createEffect<SearchType, Ticket[]>({
+interface Config {
+  tickets: Ticket[];
+  stop: boolean;
+}
+
+export const loadTicketsFx = createEffect<SearchType, Config>({
   handler: async ({ searchId }) => {
     const tickets = ky
       .get(`https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`)
-      .json<Ticket[]>();
-      
+      .json<Config>();
+
     return tickets;
   },
 });

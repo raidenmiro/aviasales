@@ -33,6 +33,7 @@
     "prettier": "2.3.2",
     "typescript": "^4.3.2",
     "vite": "^2.5.2",
+    "vite-plugin-checker": "^0.3.4",
     "vite-plugin-react-svg": "^0.2.0"
   }
 }

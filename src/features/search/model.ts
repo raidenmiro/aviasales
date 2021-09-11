@@ -5,7 +5,6 @@ import {
   createStore,
   forward,
   guard,
-  sample,
   split,
 } from 'effector';
 
@@ -34,10 +33,19 @@ split({
   },
 });
 
+export const $stopSearch = createStore(false).on(stopLoadTickets, () => true);
+
+guard({
+  clock: continueLoadTickets,
+  source: $searchId,
+  filter: Boolean,
+  target: loadTicketsFx,
+});
+
 export const increaseAttempts = createEvent();
 export const increaseDelay = createEvent();
 
-export const $attemptsLoadTickets = createStore(0).on(
+export const $attemptsLoadTickets = createStore(18).on(
   increaseAttempts,
   (attempts) => attempts + 1
 );
@@ -63,9 +71,10 @@ const $isValidEffect = combine(
   (maxAttempts, attempts) => maxAttempts > attempts
 );
 
-sample({
-  clock: $isValidEffect,
+guard({
+  clock: loadTicketsFx.fail,
   source: $delayLoadTickets,
+  filter: $isValidEffect,
   target: debounceFx,
 });
 

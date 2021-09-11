@@ -1,6 +1,6 @@
 import ky from 'ky';
 import { createEffect } from 'effector';
-import { SearchType } from '../types/entities';
+import { SearchType, Ticket } from '../types/entities';
 
 export const searchIdGetFx = createEffect<void, SearchType>({
   handler: async () => {
@@ -9,5 +9,15 @@ export const searchIdGetFx = createEffect<void, SearchType>({
       .json<SearchType>();
 
     return searchId;
+  },
+});
+
+export const ticketsGetFx = createEffect<SearchType, Ticket[]>({
+  handler: async ({ searchId }) => {
+    const tickets = ky
+      .get(`https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`)
+      .json<Ticket[]>();
+      
+    return tickets;
   },
 });

@@ -17,10 +17,26 @@ export const continueLoadTickets = createEvent();
 
 split({
   source: loadTicketsFx.doneData,
-  match: (res) => (res.stop ? 'stop' : 'continue'),
+  match: ({ stop }) => (stop ? 'stop' : 'continue'),
   cases: {
     stop: stopLoadTickets,
     continue: continueLoadTickets,
   },
 });
 
+export const increaseAttempts = createEvent();
+export const increaseDelay = createEvent();
+
+export const $attemptsLoadTickets = createStore(0).on(
+  increaseAttempts,
+  (attempts) => attempts + 1
+);
+
+export const $delayLoadTickets = createStore(1000)
+  .on(increaseDelay, (delay) => delay + 1000)
+  .reset(loadTicketsFx.done);
+
+forward({
+  from: loadTicketsFx.fail,
+  to: [increaseAttempts, increaseDelay],
+});

@@ -45,7 +45,7 @@ guard({
 export const increaseAttempts = createEvent();
 export const increaseDelay = createEvent();
 
-export const $attemptsLoadTickets = createStore(18).on(
+export const $attemptsLoadTickets = createStore(0).on(
   increaseAttempts,
   (attempts) => attempts + 1
 );

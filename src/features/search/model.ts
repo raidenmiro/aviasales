@@ -33,7 +33,10 @@ split({
   },
 });
 
-export const $stopSearch = createStore(false).on(stopLoadTickets, () => true);
+export const $notStopSearch = createStore(true).on(
+  stopLoadTickets,
+  () => false
+);
 
 guard({
   clock: continueLoadTickets,

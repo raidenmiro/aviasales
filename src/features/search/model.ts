@@ -1,9 +1,8 @@
 import { createStore } from 'effector';
-import { searchIdGetFx } from '../../api';
+import { loadSearchIdFx } from '../../api';
 import { SearchType } from '../../types/entities';
 
 export const $searchId = createStore<SearchType | null>(null).on(
-  searchIdGetFx.doneData,
+  loadSearchIdFx.doneData,
   (_, searchId) => searchId
 );
-

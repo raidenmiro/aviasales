@@ -1,2 +1,2 @@
-export { searchIdGetFx } from './requests';
-export { ticketsGetFx } from './requests';
+export { loadSearchIdFx } from './requests';
+export { loadTicketsFx } from './requests';

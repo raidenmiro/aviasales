@@ -1,5 +1,5 @@
 export type Uuid = string;
 
-export interface Search {
+export interface SearchType {
   searchId: Uuid;
 }

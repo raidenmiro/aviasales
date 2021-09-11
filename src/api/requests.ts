@@ -19,10 +19,7 @@ interface Config {
 
 export const loadTicketsFx = createEffect<SearchType, Config>({
   handler: async ({ searchId }) => {
-    const tickets = await ky
-      .get(`https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`)
-      .json<Config>();
-
-    return tickets;
+    const tickets = await fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`)
+    return tickets.json();
   },
 });

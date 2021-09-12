@@ -27,3 +27,24 @@ export const makePrice = (price: number): string => {
   const format = price.toLocaleString('ru');
   return `${format} Р`;
 };
+
+export const makeRouteTime = (date: string, duration: number): string => {
+  const format = new Date(date);
+  const hoursShipments = format.getHours();
+  const minutesShipments = format.getMinutes();
+
+  const hoursArrival = Math.floor(duration / 60);
+  const minutesArrival = hoursArrival % duration;
+
+  const sumHours =
+    hoursShipments + hoursArrival > 24
+      ? hoursShipments + hoursArrival - 24
+      : hoursShipments + hoursArrival;
+
+  const sumMinutes =
+    minutesShipments + minutesArrival > 60
+      ? minutesShipments + minutesArrival - 60
+      : minutesShipments + minutesArrival;
+
+  return `${hoursShipments}:${minutesShipments} - ${sumHours}:${sumMinutes}`;
+};

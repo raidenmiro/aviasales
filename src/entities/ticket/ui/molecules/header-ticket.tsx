@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Price, Logo } from '../atoms';
 
-import { makePrice } from '../../lib';
-
 interface Props {
-  price: number;
+  price: string;
   photoUrl: string;
 }
 
 export const HeaderTicket = ({ price, photoUrl }: Props) => (
   <Container>
-    <Price>{makePrice(price)}</Price>
+    <Price>{price}</Price>
     <Logo src={photoUrl} />
   </Container>
 );

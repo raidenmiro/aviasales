@@ -1,6 +1,7 @@
 import { NormalizeTickets } from './types/ticket-normalize';
 import { Ticket } from '../../types/entities';
 import {
+  makePrice,
   makeRouteTime,
   makeRouteTitle,
   makeTime,
@@ -32,11 +33,12 @@ export const normalizeTickets = ({
   carrier,
   segments,
 }: Ticket): NormalizeTickets => {
+  const priceFormat = makePrice(price);
   const photoUrl = `https://pics.avs.io/99/36/${carrier}.png`;
   const [there, back] = normalizeSegments(segments);
 
   return {
-    price,
+    price: priceFormat,
     photoUrl,
     there,
     back,

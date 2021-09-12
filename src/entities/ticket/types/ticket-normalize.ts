@@ -1,5 +1,5 @@
 export interface NormalizeTickets {
-  price: number;
+  price: string;
   photoUrl: string;
   there: NormalizeSegment;
   back: NormalizeSegment;

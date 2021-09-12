@@ -33,10 +33,13 @@ split({
   },
 });
 
-export const $notStopSearch = createStore(true).on(
-  stopLoadTickets,
-  () => false
-);
+export const searchFailStop = createEvent();
+
+export const $failMessage = createStore(false).on(searchFailStop, () => true);
+
+export const $notStopSearch = createStore(true)
+  .on(stopLoadTickets, () => false)
+  .on(searchFailStop, () => false);
 
 guard({
   clock: continueLoadTickets,
@@ -66,7 +69,7 @@ const debounceFx = createEffect<number, void>(
   async (delay) => new Promise((res) => setTimeout(res, delay))
 );
 
-export const $maxRetryRequest = createStore(20);
+export const $maxRetryRequest = createStore(10);
 
 const $isValidEffect = combine(
   $maxRetryRequest,
@@ -79,6 +82,12 @@ guard({
   source: $delayLoadTickets,
   filter: $isValidEffect,
   target: debounceFx,
+});
+
+guard({
+  source: loadTicketsFx.fail,
+  filter: $isValidEffect.map((is) => !is),
+  target: searchFailStop,
 });
 
 guard({

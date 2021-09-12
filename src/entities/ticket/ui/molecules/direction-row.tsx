@@ -18,6 +18,6 @@ export const DirectionRow = ({
 };
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `;

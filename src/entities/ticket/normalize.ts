@@ -1,17 +1,7 @@
-import { createStore, sample } from 'effector';
 import { NormalizeTickets } from './types/ticket-normalize';
 import { Ticket } from '../../types/entities';
 import { $cacheTickets } from './model';
 
-export const $normalizeTickets = createStore<NormalizeTickets[]>([]);
-
-sample({
-  source: $cacheTickets,
-  fn: (tickets) => tickets.map(normalizeTickets),
-  target: $normalizeTickets,
-});
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const normalizeSegments = (segments: Ticket['segments']) => {
   const normalize = segments.map((segment) => ({
     onTheWay: segment.duration,

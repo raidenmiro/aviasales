@@ -1,6 +1,7 @@
 import { NormalizeTickets } from './types/ticket-normalize';
 import { Ticket } from '../../types/entities';
 import {
+  makeRouteTime,
   makeRouteTitle,
   makeTime,
   makeTransfer,
@@ -12,17 +13,14 @@ export const normalizeSegments = (segments: Ticket['segments']) => {
     onTheWay: {
       title: 'В пути',
       content: makeTime(segment.duration),
-      value: segment.duration,
     },
     transplants: {
       title: makeTransferTitle(segment.stops),
       content: makeTransfer(segment.stops),
-      value: segment.stops,
     },
     route: {
       title: makeRouteTitle(segment.origin, segment.destination),
-      content: segment.date,
-      value: segment.date,
+      content: makeRouteTime(segment.date, segment.duration),
     },
   }));
 

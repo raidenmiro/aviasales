@@ -3,7 +3,13 @@ import styled from 'styled-components';
 import { DirectionRow } from '../molecules';
 import { HeaderTicket } from '../molecules/header-ticket';
 
-export const TicketPreview = () => {
+import { NormalizeTickets } from '../../types/ticket-normalize';
+
+interface Props {
+  ticket: NormalizeTickets;
+}
+
+export const TicketPreview = ({ ticket }: Props) => {
   return (
     <Container>
       <HeaderArea>

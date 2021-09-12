@@ -25,8 +25,6 @@ export const BaseTemplate = ({
 
 const Container = styled.section`
   display: grid;
-  height: 100%;
-  overflow: hidden;
   max-width: 97rem;
   margin: 0 auto;
 

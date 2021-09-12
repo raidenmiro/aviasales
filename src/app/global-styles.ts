@@ -19,10 +19,8 @@ export const GlobalStyles = createGlobalStyle`
     --background: var(--beige);
   }
 
-  html,
-  body,
   #root {
-    height: 100%;
+    min-height: 100vh;
   }
 
   html{

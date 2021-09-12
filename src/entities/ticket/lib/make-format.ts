@@ -22,3 +22,8 @@ export const makeTransferTitle = (stops: string[]): string => {
 export const makeRouteTitle = (from: string, to: string) => {
   return `${from}-${to}`;
 };
+
+export const makePrice = (price: number): string => {
+  const format = price.toLocaleString('ru');
+  return `${format} Р`;
+};

@@ -2,17 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStore } from 'effector-react';
 
-import {
-  TicketPreview,
-  TicketsSkelleton,
-  $normalizeTickets,
-} from '../../entities/ticket';
+import { TicketsSkelleton, TicketsList } from '../../entities/ticket';
 import { $failMessage, $notStopSearch } from '../../features/search';
 
 export const Content = () => {
   const loading = useStore($notStopSearch);
   const fail = useStore($failMessage);
-  const normalizeTickets = useStore($normalizeTickets);
 
   if (loading && !fail) {
     return (
@@ -29,8 +24,8 @@ export const Content = () => {
   if (fail) {
     return <div>max requests</div>;
   }
-
-  return <TicketPreview />;
+  
+  return <TicketsList />;
 };
 
 const Container = styled.div`

@@ -11,8 +11,8 @@ interface Props {
 
 export const HeaderTicket = ({ price, photoUrl }: Props) => (
   <Container>
-    <Price>13 400 Р</Price>
-    <Logo src="https://pics.avs.io/99/36/EK.png" />
+    <Price>{makePrice(price)}</Price>
+    <Logo src={photoUrl} />
   </Container>
 );
 

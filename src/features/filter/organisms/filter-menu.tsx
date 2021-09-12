@@ -18,6 +18,7 @@ const FormGroup = styled.form`
   max-width: 23rem;
   box-shadow: var(--shadow-small);
   border-radius: 5px;
+  background: (--white);
 `;
 
 const Typography = styled.h3`

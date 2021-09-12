@@ -1,6 +1,7 @@
-import { useStore } from 'effector-react';
 import React from 'react';
 import styled from 'styled-components';
+import { useStore } from 'effector-react';
+
 import { TicketPreview, TicketsSkelleton } from '../../entities/ticket';
 import { $normalizeTickets } from '../../entities/ticket/normalize';
 import { $failMessage, $notStopSearch } from '../../features/search';

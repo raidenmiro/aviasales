@@ -1,22 +1,24 @@
 export interface NormalizeTickets {
   price: number;
   photoUrl: string;
-  there: {
-    onTheWay: number;
-    transplants: string[];
-    route: {
-      origin: string;
-      destination: string;
-      date: string;
-    };
+  there: NormalizeSegment;
+  back: NormalizeSegment;
+}
+
+export interface NormalizeSegment {
+  onTheWay: {
+    title: string;
+    content: string;
+    value: number;
   };
-  back: {
-    onTheWay: number;
-    transplants: string[];
-    route: {
-      origin: string;
-      destination: string;
-      date: string;
-    };
+  transplants: {
+    title: string;
+    content: string;
+    value: string[];
+  };
+  route: {
+    title: string;
+    content: string;
+    value: string;
   };
 }

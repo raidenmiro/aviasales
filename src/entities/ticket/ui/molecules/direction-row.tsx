@@ -10,9 +10,9 @@ export const DirectionRow = ({
 }: NormalizeSegment) => {
   return (
     <Container>
-      <Cell title="hello" content="kek" />
-      <Cell title="hello" content="kek" />
-      <Cell title="hello" content="kek" />
+      <Cell title={route.title} content={route.content} />
+      <Cell title={onTheWay.title} content={onTheWay.content} />
+      <Cell title={transplants.title} content={transplants.content} />
     </Container>
   );
 };

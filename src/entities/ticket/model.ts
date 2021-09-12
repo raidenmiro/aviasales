@@ -17,6 +17,12 @@ export const $cacheTickets = createStore<Ticket[]>([]).on(
   (prev, tickets) => [...prev, ...tickets]
 );
 
+export const updateVisibleTickets = createEvent<NormalizeTickets[]>();
+
+export const $visibleTickets = createStore<NormalizeTickets[]>([])
+  .on(updateVisibleTickets, (prev, tickets) => [...prev, ...tickets])
+  .map((tickets) => tickets.slice(0, 5));
+
 sample({
   source: loadTicketsFx.doneData,
   fn: ({ tickets }) => tickets,
@@ -29,14 +35,8 @@ guard({
   target: updateCacheTickets,
 });
 
-export const $normalizeTickets = createStore<NormalizeTickets[]>([]);
-
 sample({
   source: $cacheTickets,
   fn: (tickets) => tickets.map(normalizeTickets),
-  target: $normalizeTickets,
+  target: updateVisibleTickets,
 });
-
-export const $visibleTickets = $normalizeTickets.map((tickets) =>
-  tickets.slice(0, 5)
-);

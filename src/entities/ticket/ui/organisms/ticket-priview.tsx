@@ -13,13 +13,21 @@ export const TicketPreview = ({ ticket }: Props) => {
   return (
     <Container>
       <HeaderArea>
-        <HeaderTicket />
+        <HeaderTicket price={ticket.price} photoUrl={ticket.photoUrl} />
       </HeaderArea>
       <MiddleArea>
-        <DirectionRow />
+        <DirectionRow
+          onTheWay={ticket.there.onTheWay}
+          transplants={ticket.there.transplants}
+          route={ticket.there.route}
+        />
       </MiddleArea>
       <BottomArea>
-        <DirectionRow />
+        <DirectionRow
+          onTheWay={ticket.back.onTheWay}
+          transplants={ticket.back.transplants}
+          route={ticket.back.route}
+        />
       </BottomArea>
     </Container>
   );

@@ -14,5 +14,10 @@ export const TabsFilter = () => {
 };
 
 const Container = styled.div`
-  text-transform: uppercase;
+  margin-bottom: 3rem;
+  max-width: 54.6rem;
+  & > button {
+    width: 33%;
+    padding: 2rem 0;
+  }
 `;

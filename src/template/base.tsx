@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { FilterMenu } from '../features/filter';
+import { FilterMenu } from '../features/filter-by-transfer';
 import { Header } from '../features/header/organisms/header';
 
 interface Props {

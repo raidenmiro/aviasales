@@ -6,7 +6,7 @@ import { Tab } from '../../../ui';
 export const TabsFilter = () => {
   return (
     <Container>
-      <Tab>Самый дешевый</Tab>
+      <Tab active>Самый дешевый</Tab>
       <Tab>Самый быстрый</Tab>
       <Tab>Оптимальный</Tab>
     </Container>
@@ -19,5 +19,11 @@ const Container = styled.div`
   & > button {
     width: 33%;
     padding: 2rem 0;
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
   }
 `;

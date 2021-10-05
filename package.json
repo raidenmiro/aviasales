@@ -10,6 +10,7 @@
     "format": "prettier --write \"./src/**/**.{ts,tsx,js,jsx,json}\""
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "effector": "^22.1.0",
     "effector-react": "^22.0.4",
     "ky": "^0.28.5",

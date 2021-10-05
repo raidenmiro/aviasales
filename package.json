@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "format": "prettier --write \"./src/**/**.{ts,tsx,js,jsx,json}\""
+    "format": "prettier --write \"./src/**/**.{ts,tsx,js,jsx,json}\"",
+    "commit": "git-cz"
   },
   "dependencies": {
     "dayjs": "^1.10.7",
@@ -39,5 +40,10 @@
     "vite": "^2.5.2",
     "vite-plugin-checker": "^0.3.4",
     "vite-plugin-react-svg": "^0.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }

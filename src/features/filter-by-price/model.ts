@@ -4,12 +4,12 @@ import { $normalizeTickets } from '../../entities/ticket';
 type Tabs = 'low' | 'fasted' | 'optimal';
 
 export const filterLowPrice = createEvent();
-export const filterByFastet = createEvent();
+export const filterByFastest = createEvent();
 export const filterByOptimal = createEvent();
 
 export const $activeTab = createStore<Tabs>('low')
   .on(filterLowPrice, () => 'low')
-  .on(filterByFastet, () => 'fasted')
+  .on(filterByFastest, () => 'fasted')
   .on(filterByOptimal, () => 'optimal');
 
 sample({
@@ -28,7 +28,7 @@ sample({
 });
 
 sample({
-  clock: filterByFastet,
+  clock: filterByFastest,
   source: $normalizeTickets,
   fn: (tickets) => {
     const sortByLowPrice = tickets.slice().sort((a, b) => {

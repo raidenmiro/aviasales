@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useStore } from 'effector-react';
 import {
   filterLowPrice,
-  filterByFastet,
+  filterByFastest,
   filterByOptimal,
   $activeTab,
 } from '../model';
@@ -17,7 +17,7 @@ export const TabsFilter = () => {
       <Tab onClick={() => filterLowPrice()} active={activeTab === 'low'}>
         Самый дешевый
       </Tab>
-      <Tab onClick={() => filterByFastet()} active={activeTab === 'fasted'}>
+      <Tab onClick={() => filterByFastest()} active={activeTab === 'fasted'}>
         Самый быстрый
       </Tab>
       <Tab onClick={() => filterByOptimal()} active={activeTab === 'optimal'}>

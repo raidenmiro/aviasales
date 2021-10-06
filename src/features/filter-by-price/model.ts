@@ -31,13 +31,13 @@ sample({
   clock: filterByFastest,
   source: $normalizeTickets,
   fn: (tickets) => {
-    const sortByLowPrice = tickets.slice().sort((a, b) => {
+    const sortByOptimal = tickets.slice().sort((a, b) => {
       const firstElement = a.there.onTheWay.value;
       const secondElement = b.there.onTheWay.value;
 
       return firstElement - secondElement;
     });
-    return sortByLowPrice;
+    return sortByOptimal;
   },
   target: $normalizeTickets,
 });

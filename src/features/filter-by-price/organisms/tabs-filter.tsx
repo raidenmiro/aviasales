@@ -1,14 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStore } from 'effector-react';
+import {
+  filterLowPrice,
+  filterByFastet,
+  filterByOptimal,
+  $activeTab,
+} from '../model';
 
 import { Tab } from '../../../ui';
 
 export const TabsFilter = () => {
+  const activeTab = useStore($activeTab);
   return (
     <Container>
-      <Tab active>Самый дешевый</Tab>
-      <Tab>Самый быстрый</Tab>
-      <Tab>Оптимальный</Tab>
+      <Tab onClick={() => filterLowPrice()} active={activeTab === 'low'}>
+        Самый дешевый
+      </Tab>
+      <Tab onClick={() => filterByFastet()} active={activeTab === 'fasted'}>
+        Самый быстрый
+      </Tab>
+      <Tab onClick={() => filterByOptimal()} active={activeTab === 'optimal'}>
+        Оптимальный
+      </Tab>
     </Container>
   );
 };

@@ -1,7 +1,5 @@
-export type Uuid = string;
-
 export interface SearchType {
-  searchId: Uuid;
+  searchId: string;
 }
 
 export interface Ticket {

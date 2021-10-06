@@ -13,7 +13,7 @@ export const TicketPreview = ({ ticket }: Props) => {
   return (
     <Container>
       <HeaderArea>
-        <HeaderTicket price={ticket.price} photoUrl={ticket.photoUrl} />
+        <HeaderTicket price={ticket.price.title} photoUrl={ticket.photoUrl} />
       </HeaderArea>
       <MiddleArea>
         <DirectionRow

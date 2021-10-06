@@ -11,10 +11,12 @@ const attrs = (props: Props) => ({
 export const Tab = styled.button.attrs(attrs)<Props>`
   background: var(--beige);
   color: var(--back);
-  
+
   border: 1px solid #dfe5ec;
   font-size: var(--size-small);
   letter-spacing: 0.5px;
+
+  cursor: pointer;
 
   &[data-active='true'] {
     background: var(--blue);

@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 export const makeTime = (minutes: number): string => {
   const hours = Math.floor(minutes / 60);
   const min = hours % minutes;
@@ -29,22 +31,14 @@ export const makePrice = (price: number): string => {
 };
 
 export const makeRouteTime = (date: string, duration: number): string => {
-  const format = new Date(date);
-  const hoursShipments = format.getHours();
-  const minutesShipments = format.getMinutes();
+  const formatHours = dayjs(date, 'hh');
+  const formatMinets = dayjs(date, 'mm');
 
-  const hoursArrival = Math.floor(duration / 60);
-  const minutesArrival = hoursArrival % duration;
+  const departureHours = formatHours.format('hh');
+  const departureMinets = formatMinets.format('mm');
+  
+  const arrivalHours = formatHours.add(duration, 'hour').format('hh');
+  const arrivalMinets = formatMinets.add(duration, 'minute').format('mm');
 
-  const sumHours =
-    hoursShipments + hoursArrival > 24
-      ? hoursShipments + hoursArrival - 24
-      : hoursShipments + hoursArrival;
-
-  const sumMinutes =
-    minutesShipments + minutesArrival > 60
-      ? minutesShipments + minutesArrival - 60
-      : minutesShipments + minutesArrival;
-
-  return `${hoursShipments}:${minutesShipments} - ${sumHours}:${sumMinutes}`;
+  return `${departureHours}:${departureMinets} - ${arrivalHours}:${arrivalMinets}`;
 };

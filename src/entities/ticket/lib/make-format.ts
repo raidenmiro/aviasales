@@ -16,7 +16,7 @@ export const makeTransfer = (stops: string[]): string => {
 export const makeTransferTitle = (stops: string[]): string => {
   if (stops.length === 0) return 'Без пересадок';
   if (stops.length === 1) return `${stops.length} пересадка`;
-  if (stops.length < 4) return `${stops.length} пересадки`;
+  if (stops.length < 5) return `${stops.length} пересадки`;
 
   return `${stops.length} пересадок`;
 };

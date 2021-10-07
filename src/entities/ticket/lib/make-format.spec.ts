@@ -38,4 +38,27 @@ describe('normalize tickets', () => {
       expect(makeTransfer(transfers)).toBe(expected);
     });
   });
+
+  describe('makeTransferTitle', () => {
+    it('check the creation of the title if there are no transplants', () => {
+      const transfers: string[] = [];
+      const expected = 'Без пересадок';
+
+      expect(makeTransferTitle(transfers)).toBe(expected);
+    });
+
+    it('check the creation of the title if 4 transplants', () => {
+      const transfers = ['HKG', 'JNB', 'SPB', 'USA'];
+      const expected = '4 пересадки';
+
+      expect(makeTransferTitle(transfers)).toBe(expected);
+    });
+
+    it('correct declination for a large number of transplants', () => {
+      const transfers = ['HKG', 'JNB', 'SPB', 'USA', 'TDD', 'BDD'];
+      const expected = '6 пересадок';
+
+      expect(makeTransferTitle(transfers)).toBe(expected);
+    });
+  });
 });

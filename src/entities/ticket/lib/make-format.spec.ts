@@ -16,4 +16,26 @@ describe('normalize tickets', () => {
       expect(makePrice(price)).toBe(expected);
     });
   });
+  describe('make transfer', () => {
+    it('сheck the correct formation of transplants', () => {
+      const transfers = ['HKG', 'JNB'];
+      const expected = 'HKG, JNB';
+
+      expect(makeTransfer(transfers)).toBe(expected);
+    });
+
+    it('check for proper formatting at 1 transplant', () => {
+      const transfers = ['HKG'];
+      const expected = 'HKG';
+
+      expect(makeTransfer(transfers)).toBe(expected);
+    });
+
+    it('check for proper formatting if there are no transplants', () => {
+      const transfers: string[] = [];
+      const expected = '';
+
+      expect(makeTransfer(transfers)).toBe(expected);
+    });
+  });
 });

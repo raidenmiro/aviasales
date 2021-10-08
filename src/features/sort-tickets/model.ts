@@ -1,4 +1,5 @@
-import { createEvent, createStore, sample } from 'effector';
+import { createEvent, createStore, guard, sample } from 'effector';
+import { $notStopSearch } from '../../entities/search-tickets';
 import { $normalizeTickets } from '../../entities/ticket';
 
 type Tabs = 'low' | 'fasted' | 'optimal';
@@ -40,4 +41,10 @@ sample({
     return sortByOptimal;
   },
   target: $normalizeTickets,
+});
+
+guard({
+  source: $notStopSearch,
+  filter: (is) => !is,
+  target: filterLowPrice,
 });

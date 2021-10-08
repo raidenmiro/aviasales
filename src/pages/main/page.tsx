@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabsFilter } from '../../features/filter-by-price';
+import { TabsFilter } from '../../features/sort-tickets';
 import { BaseTemplate } from '../../template/base';
 import { Content } from './content';
 

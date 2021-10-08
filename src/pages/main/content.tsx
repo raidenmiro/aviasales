@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useStore } from 'effector-react';
 
 import { TicketsSkelleton, TicketsList } from '../../entities/ticket';
-import { $failMessage, $notStopSearch } from '../../features/search';
+import { $failMessage, $notStopSearch } from '../../entities/search-tickets';
 
 export const Content = () => {
   const loading = useStore($notStopSearch);

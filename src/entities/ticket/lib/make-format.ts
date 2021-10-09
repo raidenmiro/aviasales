@@ -31,14 +31,16 @@ export const makePrice = (price: number): string => {
 };
 
 export const makeRouteTime = (date: string, duration: number): string => {
-  const formatHours = dayjs(date, 'hh');
-  const formatMinets = dayjs(date, 'mm');
+  const formatDate = dayjs(date);
 
-  const departureHours = formatHours.format('hh');
-  const departureMinets = formatMinets.format('mm');
-  
-  const arrivalHours = formatHours.add(duration, 'hour').format('hh');
-  const arrivalMinets = formatMinets.add(duration, 'minute').format('mm');
+  const hours = Math.floor(duration / 60);
+  const min = hours % duration;
+
+  const departureHours = formatDate.format('HH');
+  const departureMinets = formatDate.format('mm');
+
+  const arrivalHours = formatDate.add(hours, 'hour').format('HH');
+  const arrivalMinets = formatDate.add(min, 'minute').format('mm');
 
   return `${departureHours}:${departureMinets} - ${arrivalHours}:${arrivalMinets}`;
 };

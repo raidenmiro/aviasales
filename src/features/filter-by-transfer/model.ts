@@ -1,5 +1,9 @@
-import { createStore } from 'effector';
+import { ChangeEvent } from 'react';
+
+import { createEvent, createStore } from 'effector';
 import { filtersType } from './lib';
+
+export const filterChanged = createEvent<ChangeEvent<HTMLInputElement>>();
 
 export const $filterItems = createStore([
   {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useList } from 'effector-react';
 import { CheckBox } from '../../../ui';
-import { $filterItems } from '../model';
+import { $filterItems, filterChanged } from '../model';
 import styled from 'styled-components';
 
 export const CheckBoxList = () =>
@@ -13,7 +13,7 @@ export const CheckBoxList = () =>
         value={id}
         text={title}
         checked={active}
-        onChange={console.log}
+        onChange={filterChanged}
       />
     </Group>
   ));

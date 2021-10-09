@@ -1,15 +1,23 @@
 import React from 'react';
-import { useList } from 'effector-react';
-import { TicketPreview } from './ticket-priview';
-import { $visibleTickets } from '../../model';
 import styled from 'styled-components';
 
-export const TicketsList = () =>
-  useList($visibleTickets, (ticket) => (
-    <Container>
-      <TicketPreview ticket={ticket} />
-    </Container>
-  ));
+import { NormalizeTickets } from '../../types/ticket-normalize';
+import { TicketPreview } from './ticket-preview';
+
+interface Props {
+  tickets: NormalizeTickets[];
+}
+export const TicketsList = ({ tickets }: Props) => {
+  return (
+    <>
+      {tickets.map((ticket, index) => (
+        <Container key={index}>
+          <TicketPreview ticket={ticket} />
+        </Container>
+      ))}
+    </>
+  );
+};
 
 const Container = styled.div`
   margin-bottom: 2rem;

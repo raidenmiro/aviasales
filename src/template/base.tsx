@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { FilterMenu } from '../features/filter-by-transfer';
-import { Header } from '../features/header/organisms/header';
+import { Header } from '../features/header';
 
 interface Props {
   header?: ReactNode;

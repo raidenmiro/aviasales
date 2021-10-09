@@ -1,9 +1,11 @@
 import { ChangeEvent } from 'react';
 
-import { createEvent, createStore } from 'effector';
+import { createEvent, createStore, sample } from 'effector';
 import { filtersType } from './lib';
+import { $normalizeTickets } from '../../entities/ticket';
 
 export const filterChanged = createEvent<ChangeEvent<HTMLInputElement>>();
+export const toggleAllFilters = createEvent();
 
 export const $filterItems = createStore([
   {

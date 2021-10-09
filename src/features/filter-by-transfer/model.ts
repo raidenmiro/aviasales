@@ -1,28 +1,29 @@
 import { createStore } from 'effector';
+import { filtersType } from './lib';
 
 export const $filterItems = createStore([
   {
-    id: 1,
+    id: filtersType.ALL_TRANSFERS,
     title: 'Все',
     active: true,
   },
   {
-    id: 2,
+    id: filtersType.NO_TRANSFERS,
     title: 'Без пересадок',
     active: true,
   },
   {
-    id: 3,
+    id: filtersType.ONE_TRANSPLANT,
     title: '1 пересадка',
     active: true,
   },
   {
-    id: 4,
+    id: filtersType.TWO_TRANSPLANT,
     title: '2 пересадки',
     active: true,
   },
   {
-    id: 5,
+    id: filtersType.THREE_TRANSPLANT,
     title: '3 пересадки',
     active: true,
   },

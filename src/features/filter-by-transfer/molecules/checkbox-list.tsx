@@ -6,10 +6,11 @@ import { $filterItems } from '../model';
 import styled from 'styled-components';
 
 export const CheckBoxList = () =>
-  useList($filterItems, ({ title, active }, index) => (
+  useList($filterItems, ({ id, title, active }) => (
     <Group>
       <CheckBox
         name={title}
+        value={id}
         text={title}
         checked={active}
         onChange={console.log}

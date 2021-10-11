@@ -9,7 +9,7 @@ import {
 } from 'effector';
 
 import { loadSearchIdFx, loadTicketsFx } from '../../api';
-import { SearchType } from '../../types/entities';
+import type { SearchType } from '../../types/entities';
 
 export const $searchId = createStore<SearchType | null>(null).on(
   loadSearchIdFx.doneData,

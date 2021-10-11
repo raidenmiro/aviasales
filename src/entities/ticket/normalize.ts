@@ -1,5 +1,5 @@
+import type { Ticket } from '../../types/entities';
 import { NormalizeTickets } from './types/ticket-normalize';
-import { Ticket } from '../../types/entities';
 import {
   makePrice,
   makeRouteTime,

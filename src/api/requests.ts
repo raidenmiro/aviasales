@@ -1,6 +1,6 @@
 import ky from 'ky';
 import { createEffect } from 'effector';
-import { SearchType, Ticket } from '../types/entities';
+import type { SearchType, Ticket } from '../types/entities';
 
 export const loadSearchIdFx = createEffect<void, SearchType>({
   handler: async () => {

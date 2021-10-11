@@ -78,9 +78,9 @@ export const $filterItems = createStore(filters)
   );
 
 export const $isAllActive = $filterItems.map((filters) => {
-  const head = filters.slice()[0];
+  const head = filters[0];
 
-  return head.active;
+  return !head.active;
 });
 
 export const $configActiveFilters = $filterItems.map((filters) =>
@@ -130,4 +130,4 @@ export const $filteredTickets = combine(
   }
 );
 
-
+$isAllActive.watch(console.log);

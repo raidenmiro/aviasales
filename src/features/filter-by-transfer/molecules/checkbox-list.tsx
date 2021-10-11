@@ -1,9 +1,9 @@
 import React from 'react';
-
-import { useList } from 'effector-react';
-import { CheckBox } from '../../../ui';
-import { $filterItems, filterChanged } from '../model';
 import styled from 'styled-components';
+import { useList } from 'effector-react';
+
+import { CheckBox } from '../../../ui';
+import { $filterItems, filterSelected } from '../model';
 
 export const CheckBoxList = () =>
   useList($filterItems, ({ id, title, active }) => (
@@ -13,7 +13,7 @@ export const CheckBoxList = () =>
         value={id}
         text={title}
         checked={active}
-        onChange={filterChanged}
+        onChange={() => filterSelected(id)}
       />
     </Group>
   ));

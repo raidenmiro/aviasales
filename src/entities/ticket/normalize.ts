@@ -1,4 +1,4 @@
-import { NormalizeTickets } from './types/ticket-normalize';
+import type { NormalizeTickets } from './types/ticket-normalize';
 import { Ticket } from '../../types/entities';
 import {
   makePrice,

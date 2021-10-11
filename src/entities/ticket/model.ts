@@ -2,7 +2,7 @@ import { normalizeTickets } from './normalize';
 import { createStore, guard, sample } from 'effector';
 import { loadTicketsFx } from '../../api';
 import { Ticket } from '../../types/entities';
-import { NormalizeTickets } from './types/ticket-normalize';
+import type { NormalizeTickets } from './types/ticket-normalize';
 
 export const $tickets = createStore<Ticket[] | null>(null);
 
@@ -20,4 +20,3 @@ sample({
   fn: ({ tickets }) => tickets.map(normalizeTickets),
   target: $normalizeTickets,
 });
-

@@ -132,6 +132,54 @@ describe('filters', () => {
         expect(filter.active).toBeFalsy();
       }
     });
+
+    it('if you turn on the filter "all", all will be activated', async () => {
+      const mockFilters = [
+        {
+          id: filtersType.ALL_TRANSFERS,
+          title: 'Все',
+          active: false,
+          stop: -1,
+        },
+        {
+          id: filtersType.NO_TRANSFERS,
+          title: 'Без пересадок',
+          active: true,
+          stop: 0,
+        },
+        {
+          id: filtersType.ONE_TRANSPLANT,
+          title: '1 пересадка',
+          active: false,
+          stop: 1,
+        },
+        {
+          id: filtersType.TWO_TRANSPLANT,
+          title: '2 пересадки',
+          active: true,
+          stop: 2,
+        },
+        {
+          id: filtersType.THREE_TRANSPLANT,
+          title: '3 пересадки',
+          active: false,
+          stop: 3,
+        },
+      ];
+
+      const scope = fork({
+        values: new Map().set($filterItems, mockFilters),
+      });
+
+      await allSettled(filterSelected, {
+        params: filtersType.ALL_TRANSFERS,
+        scope,
+      });
+
+      for (const filter of scope.getState($filterItems)) {
+        expect(filter.active).toBeTruthy();
+      }
+    });
   });
 
   describe('events filters', () => {

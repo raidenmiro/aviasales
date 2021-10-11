@@ -17,7 +17,7 @@ export interface NormalizeSegment {
   transplants: {
     title: string;
     content: string;
-    value: string[];
+    value: number;
   };
   route: {
     title: string;

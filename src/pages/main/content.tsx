@@ -4,10 +4,12 @@ import { useStore } from 'effector-react';
 
 import { TicketsSkelleton, TicketsList } from '../../entities/ticket';
 import { $failMessage, $notStopSearch } from '../../entities/search-tickets';
+import { $filteredTickets } from '../../features/filter-by-transfer/model';
 
 export const Content = () => {
   const loading = useStore($notStopSearch);
   const fail = useStore($failMessage);
+  const tickets = useStore($filteredTickets);
 
   if (loading && !fail) {
     return (
@@ -24,8 +26,8 @@ export const Content = () => {
   if (fail) {
     return <div>max requests</div>;
   }
-  
-  return <TicketsList />;
+
+  return <TicketsList tickets={tickets} />;
 };
 
 const Container = styled.div`

@@ -19,7 +19,7 @@ export const normalizeSegments = (segments: Ticket['segments']) => {
     transplants: {
       title: makeTransferTitle(segment.stops),
       content: makeTransfer(segment.stops),
-      value: segment.stops,
+      value: segment.stops.length,
     },
     route: {
       title: makeRouteTitle(segment.origin, segment.destination),

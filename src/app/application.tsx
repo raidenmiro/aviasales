@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { loadSearchIdFx } from '../api/requests';
+import { loadSearchIdFx } from '../api';
 
 import { Main } from '../pages';
 import { GlobalStyles } from './global-styles';

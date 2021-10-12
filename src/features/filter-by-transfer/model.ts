@@ -130,4 +130,4 @@ export const $filteredTickets = combine(
   }
 );
 
-$isAllActive.watch(console.log);
+export const $tickets = $filteredTickets.map((tickets) => tickets.slice(0, 5));

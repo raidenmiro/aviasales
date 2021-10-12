@@ -1,14 +1,11 @@
-import ky from 'ky';
-import { createEffect } from 'effector';
 import type { SearchType, Ticket } from '../types/entities';
+import { createEffect } from 'effector';
 
 export const loadSearchIdFx = createEffect<void, SearchType>({
   handler: async () => {
-    const searchId = await ky
-      .get('https://front-test.beta.aviasales.ru/search')
-      .json<SearchType>();
+    const searchId = await fetch('https://front-test.beta.aviasales.ru/search');
 
-    return searchId;
+    return searchId.json();
   },
 });
 

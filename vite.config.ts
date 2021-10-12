@@ -5,7 +5,6 @@ import checker from 'vite-plugin-checker';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default defineConfig({
-  base: '/aviasales/',
   plugins: [
     reactRefresh(),
     reactSvgPlugin({

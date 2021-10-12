@@ -18,17 +18,8 @@ export const Tab = styled.button.attrs(attrs)<Props>`
 
   cursor: pointer;
 
-  transition: background-color 0.4s linear 0s;
-  position: relative;
-
   &[data-active='true'] {
     background: var(--blue);
     color: var(--white);
-  }
-
-  &[data-active='false'] {
-    &:hover {
-      border-color: var(--blue);
-    }
   }
 `;

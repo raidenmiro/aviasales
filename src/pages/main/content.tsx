@@ -4,12 +4,12 @@ import { useStore } from 'effector-react';
 
 import { TicketsSkelleton, TicketsList } from '../../entities/ticket';
 import { $failMessage, $notStopSearch } from '../../entities/search-tickets';
-import { $filteredTickets } from '../../features/filter-by-transfer/model';
+import { $tickets } from '../../features/filter-by-transfer/model';
 
 export const Content = () => {
   const loading = useStore($notStopSearch);
   const fail = useStore($failMessage);
-  const tickets = useStore($filteredTickets);
+  const tickets = useStore($tickets);
 
   if (loading && !fail) {
     return (

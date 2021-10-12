@@ -22,7 +22,7 @@ export const CheckBox = styled(CheckboxBase)`
 
   & > label {
     cursor: pointer;
-    font-size: var(--size-small);
+    font-size: var(--size-medium);
   }
 
   & input {

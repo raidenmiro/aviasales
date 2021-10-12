@@ -22,7 +22,7 @@ const FormGroup = styled.form`
 `;
 
 const Typography = styled.h3`
-  font-size: var(--size-medium);
+  font-size: var(--size-large);
   color: var(--black);
   font-weight: var(--weight);
 

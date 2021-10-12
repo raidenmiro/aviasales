@@ -39,4 +39,13 @@ export const GlobalStyles = createGlobalStyle`
   #root{
     background: var(--background);
   }
+
+  h1,
+  h2,
+  h3,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
 `;
